@@ -1,2 +1,2 @@
 # practiceCodeFights
-Exercises Algoritm Array
+Exercises Algoritm Array in Klotin
