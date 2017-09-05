@@ -1,0 +1,15 @@
+fun firstDuplicate(a: MutableList<Int>): Int{
+  var result = -1
+  val repeat = arrayOfNulls<Int>(a.size)
+  for (i in a.indices){
+    val u: Int? = repeat[a[i]]
+    if (u != null){
+      result = a[i]
+      return result
+    }else{
+      repeat[a[i]] = i
+    }
+  }
+  return result
+}
+    
