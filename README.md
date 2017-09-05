@@ -1,1 +1,2 @@
 # practiceCodeFights
+Exercises Algoritm Array
