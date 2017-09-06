@@ -1,0 +1,14 @@
+fun firstNotRepeatingCharacter(s: String): Char {
+    val d: LinkedHashMap<Char, Int> = LinkedHashMap()
+
+        for (c: Char in s)
+           if (!d.containsKey(c)){
+               d[c] = 1
+           }else{
+
+               d[c] = d[c]!!.plus(1)
+           }
+
+
+        return d.entries.firstOrNull {it.value == 1}?.key ?: '_'
+}
