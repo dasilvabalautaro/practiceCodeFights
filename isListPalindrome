@@ -1,0 +1,15 @@
+//data class ListNode<T>(var value: T) {
+//    var next: ListNode<T>? = null;
+//}
+
+//
+fun isListPalindrome(l: ListNode<Int>?): Boolean {
+    val t: MutableList<Int> = ArrayList()
+        var cur = l
+        while (null != cur){
+            t.add(cur.value)
+            cur = cur.next
+        }
+        val n: Int = (t.size + 1)/2
+    return (0 until n).none { t[it] != t[t.size - it - 1] }
+}
