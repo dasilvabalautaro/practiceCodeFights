@@ -1,0 +1,13 @@
+fun findProfession(level: Int, pos: Int): String {
+    return if (findProffesion(level, pos) == 'E') "Engineer" else "Doctor"
+}
+
+fun findProffesion(level:Int, pos:Int): Char{
+        if (level == 1) return 'E'
+        if (findProffesion(level - 1, (pos + 1)/2) == 'D'){
+            return if ((pos % 2) == 1) 'D' else 'E'
+
+        }
+        return if ((pos % 2) == 1) 'E' else 'D'
+
+}
