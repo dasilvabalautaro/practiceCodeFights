@@ -1,0 +1,23 @@
+//data class ListNode<T>(var value: T) {
+//    var next: ListNode<T>? = null;
+//}
+
+//
+fun removeKFromList(l: ListNode<Int>?, k: Int): ListNode<Int>? {
+    val a: MutableList<Int> = ArrayList()
+        var lt = l
+        while (true){
+            if (lt == null) break
+            if (lt.value != k) a.add(lt.value)
+            lt = lt.next
+        }
+        var r: ListNode<Int>? = null
+        var t: ListNode<Int>? = null
+        for (i in a.size - 1 downTo 0 ){
+            r = t
+            t = ListNode(a[i])
+            t.next = r
+        }
+        
+        return t
+}
