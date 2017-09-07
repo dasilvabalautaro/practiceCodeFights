@@ -1,0 +1,27 @@
+//
+//data class Tree<T>(var value: T) {
+//    var left: Tree<T>? = null;
+//    var right: Tree<T>? = null;
+//}
+
+fun isTreeSymmetric(t: Tree<Int>?): Boolean {
+    if (t == null)
+        return true
+    return isSymmetric(t.left, t.right)
+}
+
+fun isSymmetric(l: Tree<Int>?, r: Tree<Int>?): Boolean{
+        if (l == null && r == null)
+            return true
+        else if (r == null || l == null)
+            return false
+        if (l.value != r.value)
+            return false
+
+        if (!isSymmetric(l.left, r.right))
+            return false
+        if (!isSymmetric(l.right, r.left))
+            return false
+
+        return true
+}
