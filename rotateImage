@@ -1,0 +1,17 @@
+fun rotateImage(a: MutableList<MutableList<Int>>): MutableList<MutableList<Int>> {
+    val newMatrix: MutableList<MutableList<Int>> = ArrayList()
+
+        for (i in a.indices){
+            val holdMatrix = IntArray(a.size)
+            var lastIndex = a.size - 1
+            for (j in a.indices){
+                val moveIndex = a[j][i]
+                holdMatrix[lastIndex] = moveIndex
+                lastIndex -= 1
+            }
+            val mutableNew = holdMatrix.toMutableList()
+            newMatrix.add(mutableNew)
+        }
+        return newMatrix
+
+}
